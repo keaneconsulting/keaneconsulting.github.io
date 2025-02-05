@@ -15,3 +15,8 @@ if (isMorning) {
 
 const welcome = document.querySelector('#welcome');
 welcome.textContent = `${greeting} Welcome to Evan's Cool Site!`;
+
+// secret message
+localStorage.setItem("It's a secret to everybody.", "Secret message: World of Warcraft reference?");
+const secretMessage = localStorage.getItem("It's a secret to everybody.");
+console.log(secretMessage);
