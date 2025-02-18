@@ -40,7 +40,6 @@ const showImages = () => {
         image.src = urls[imageIndex]
     })
 }
-
 showImages()
 
 document.getElementById('prev').addEventListener('click', () => {
@@ -52,7 +51,6 @@ document.getElementById('next').addEventListener('click', () => {
     currentImage++
     showImages()
 })
-
 setInterval(() => {
     currentImage++
     showImages()
