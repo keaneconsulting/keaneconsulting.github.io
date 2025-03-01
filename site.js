@@ -55,3 +55,36 @@ setInterval(() => {
     currentImage++
     showImages()
 }, 5000)
+
+
+const todoList = document.querySelector('.todo-list');
+const newTodoInput = document.getElementById('new-todo');
+const addTodoButton = document.querySelector('button[type="button"]');
+
+const renderTodos = () => {
+    const todos = JSON.parse(localStorage.getItem('todo-list')) || [];
+    todoList.innerHTML = '';
+
+    todos.forEach(todo => {
+        const li = document.createElement('li');
+        li.textContent = todo.text;
+        todoList.append(li);
+    });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderTodos();
+});
+
+addTodoButton.addEventListener('click', () => {
+    const todoText = newTodoInput.value.trim();
+
+    if (todoText) {
+        const todos = JSON.parse(localStorage.getItem('todo-list')) || [];
+        todos.push({ text: todoText, completed: false });
+        localStorage.setItem('todo-list', JSON.stringify(todos));
+
+        newTodoInput.value = '';
+        renderTodos();
+    }
+});
