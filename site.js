@@ -100,11 +100,11 @@ const getRandomPokemon = async () => {
     return pokemonData;
 };
 const renderPokemon = (pokemon) => {
-    const pokemon = document.getElementById('pokemon');
+    const pokemonDiv = document.getElementById('pokemon');
     const img = document.createElement('img');
     img.src = pokemon.sprites.front_default;
     img.alt = pokemon.name;
-    pokemon.appendChild(img);
+    pokemonDiv.appendChild(img);
 };
 const displayPokemon = async () => {
     const pokemon = await getRandomPokemon();
