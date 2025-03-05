@@ -96,8 +96,8 @@ addTodoButton.addEventListener('click', () => {
 const getRandomPokemon = async () => {
     const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150);
     const response = await fetch(url);
-    const pokemon = await response.json();
-    return pokemon;
+    const pokemonData = await response.json();
+    return pokemonData;
 };
 const renderPokemon = (pokemon) => {
     const pokemon = document.getElementById('pokemon');
